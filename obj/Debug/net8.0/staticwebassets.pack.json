@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\diego\\Documents\\api\\Proyecto2Api\\wwwroot\\credentials\\credenciales.json",
+      "PackagePath": "staticwebassets\\credentials\\credenciales.json"
+    },
+    {
+      "Id": "C:\\Users\\diego\\Documents\\api\\Proyecto2Api\\wwwroot\\credentials\\proyect2database-firebase-adminsdk-wgb3m-c542ebd766.json",
+      "PackagePath": "staticwebassets\\credentials\\proyect2database-firebase-adminsdk-wgb3m-c542ebd766.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Proyecto2Api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Proyecto2Api.props",
+      "PackagePath": "build\\Proyecto2Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Proyecto2Api.props",
+      "PackagePath": "buildMultiTargeting\\Proyecto2Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Proyecto2Api.props",
+      "PackagePath": "buildTransitive\\Proyecto2Api.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
