@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wrFTYKV3dGmojB0pYc/bYrqRTKTxgE/8ayfnq/CpIP0=",
+  "Hash": "1beC96bIP2xnD7CG73cUx23DgM6h5En0w0jRTt2TSDo=",
   "Source": "Proyecto2Api",
   "BasePath": "_content/Proyecto2Api",
   "Mode": "Default",
@@ -15,44 +15,5 @@
       "Pattern": "**"
     }
   ],
-  "Assets": [
-    {
-      "Identity": "C:\\Users\\diego\\Documents\\api\\Proyecto2Api\\wwwroot\\credentials\\credenciales.json",
-      "SourceId": "Proyecto2Api",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\diego\\Documents\\api\\Proyecto2Api\\wwwroot\\",
-      "BasePath": "_content/Proyecto2Api",
-      "RelativePath": "credentials/credenciales.json",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\credentials\\credenciales.json"
-    },
-    {
-      "Identity": "C:\\Users\\diego\\Documents\\api\\Proyecto2Api\\wwwroot\\credentials\\proyect2database-firebase-adminsdk-wgb3m-c542ebd766.json",
-      "SourceId": "Proyecto2Api",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\diego\\Documents\\api\\Proyecto2Api\\wwwroot\\",
-      "BasePath": "_content/Proyecto2Api",
-      "RelativePath": "credentials/proyect2database-firebase-adminsdk-wgb3m-c542ebd766.json",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\credentials\\proyect2database-firebase-adminsdk-wgb3m-c542ebd766.json"
-    }
-  ]
+  "Assets": []
 }

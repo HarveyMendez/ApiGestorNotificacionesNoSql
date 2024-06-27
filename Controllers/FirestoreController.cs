@@ -1,6 +1,4 @@
-﻿using Google.Cloud.Firestore;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Proyecto2Api.DTO;
 
 namespace Proyecto2Api.Controllers
@@ -9,93 +7,67 @@ namespace Proyecto2Api.Controllers
     [ApiController]
     public class FirestoreController : ControllerBase
     {
-        private readonly FirestoreDb _context;
+        private readonly EstudianteService _estudianteService;
+        private readonly Utils _utils;
 
-        public FirestoreController(FireBaseConnection context)
+        public FirestoreController(EstudianteService estudianteService, Utils utils)
         {
-            _context = context.GetFirestoreDb();
+            _estudianteService = estudianteService;
+            _utils = utils;
         }
 
-        [HttpPost("/EncriptarTexto")]
-        public string EncriptarString(string stringAconvertir)
+        [HttpGet("/GestionarNotificaciones")]
+        public async Task<IActionResult> GestionarNotificaciones()
         {
-            //encriptar
-            string encryptedConnectionString = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(stringAconvertir));
-            return encryptedConnectionString;
-        }
+            List<EmailDTO> notificaciones = new List<EmailDTO>();
 
-        [HttpGet("read")]
-        public async Task<IActionResult> ReadData()
-        {
-            QuerySnapshot snapshot = await _context.Collection("Estudiante").GetSnapshotAsync();
-            var data = snapshot.Documents.Select(d => d.ToDictionary()).ToList();
-            return Ok(data);
+            notificaciones = await _estudianteService.ObtenerNotificacionesPendientes();
+            
+            EnviarCorreos(notificaciones);
+
+            return Ok(notificaciones);
         }
 
         [HttpPost("InsertarEstudiante")]
-        public async Task<IActionResult> InsertarEstudiante(EstudianteDTO input)
+        public async Task<IActionResult> InsertarEstudianteAsync([FromBody] EstudianteDTO input)
         {
-            try
-            {
-                await _context.RunTransactionAsync(async transaction =>
-                {
-                    
-                    CollectionReference estudiantesRef = _context.Collection("Estudiante");
+            var result = await _estudianteService.InsertarEstudianteAsync(
+                input.Nombre, input.Apellidos, input.Carne, input.Correo, input.Telefono);
 
-                    Dictionary<string, object> estudiante = new Dictionary<string, object>
-                    {
-                        { "Nombre", input.Nombre },
-                        { "Apellidos", input.Apellidos },
-                        { "Carne", input.Carne },
-                        { "Correo", input.Correo },
-                        { "Telefono", input.Telefono },
-                        { "Activo", false }
-                    };
-
-                    DocumentReference newEstudianteRef = estudiantesRef.Document();
-                    transaction.Create(newEstudianteRef, estudiante);
-                });
-
-                return Ok("Estudiante creado exitosamente.");
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Error al procesar la solicitud. "+ex);
-            }
+            return Ok(result);
         }
 
         [HttpPut("ActivarEstudiante")]
-        public async Task<IActionResult> ActualizarEstadoActivo(string carne)
+        public async Task<IActionResult> ActivarEstudiante(string carne)
         {
-            try
+            var result = await _estudianteService.ActivarEstudianteAsync(carne);
+
+            return Ok(result);
+        }
+
+        [HttpPut("DesactivarEstudiante")]
+        public async Task<IActionResult> DesactivarEstudiante(string carne)
+        {
+            var result = await _estudianteService.DesactivarEstudianteAsync(carne);
+
+            return Ok(result);
+        }
+
+        private async void EnviarCorreos(List<EmailDTO> notificaciones)
+        {
+            foreach (EmailDTO notificacion in notificaciones)
             {
-                CollectionReference estudiantesRef = _context.Collection("Estudiante");
-
-                QuerySnapshot querySnapshot = await estudiantesRef.WhereEqualTo("Carne", carne).GetSnapshotAsync();
-                DocumentSnapshot documentSnapshot = querySnapshot.Documents.FirstOrDefault();
-
-                if (documentSnapshot != null)
+                using HttpResponseMessage response = await _utils.GetAPIHost().PostAsJsonAsync(_utils.GetEmailAPI(), notificacion);
+                if (response.IsSuccessStatusCode)
                 {
-                    string idDocumento = documentSnapshot.Id;
-
-                    Dictionary<string, object> updates = new Dictionary<string, object>
-                {
-                    { "Activo", true }
-                };
-
-                    await estudiantesRef.Document(idDocumento).SetAsync(updates, SetOptions.MergeAll);
-
-                    return Ok($"Estado Activo actualizado a true para el estudiante con carne: {carne}");
-                }
-                else
-                {
-                    return NotFound($"No se encontró ningún estudiante con carne: {carne}");
+                    MarcarNotificacionEnviada(notificacion.IdFirebase);
                 }
             }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Error al actualizar el estado Activo del estudiante: {ex.Message}");
-            }
+        }
+
+        private async void MarcarNotificacionEnviada(string idNotificacion)
+        {
+            await _estudianteService.MarcarNotificacionEnviadaAsync(idNotificacion);
         }
     }
 }

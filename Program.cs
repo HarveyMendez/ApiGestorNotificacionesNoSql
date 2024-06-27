@@ -9,7 +9,9 @@ builder.Services.AddControllers().AddNewtonsoftJson();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton(new FireBaseConnection());
+//builder.Services.AddSingleton(new FireBaseConnection());
+builder.Services.AddScoped<EstudianteService>();
+builder.Services.AddScoped<Utils>();
 
 var app = builder.Build();
 

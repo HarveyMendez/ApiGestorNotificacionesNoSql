@@ -18,7 +18,6 @@ namespace Proyecto2Api
 
         private FirestoreDb InitializeFirestoreDb()
         {
-
             string base64Credentials = Environment.GetEnvironmentVariable("credentials");
 
             byte[] credentialBytes = Convert.FromBase64String(base64Credentials);

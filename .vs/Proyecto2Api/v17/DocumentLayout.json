@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\diego\\Documents\\api\\Proyecto2Api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5EEA317D-922F-4321-8488-E132C98252AB}|Proyecto2Api.csproj|c:\\users\\diego\\documents\\api\\proyecto2api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EEA317D-922F-4321-8488-E132C98252AB}|Proyecto2Api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5EEA317D-922F-4321-8488-E132C98252AB}|Proyecto2Api.csproj|c:\\users\\diego\\documents\\api\\proyecto2api\\controllers\\firestorecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5EEA317D-922F-4321-8488-E132C98252AB}|Proyecto2Api.csproj|solutionrelative:controllers\\firestorecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5EEA317D-922F-4321-8488-E132C98252AB}|Proyecto2Api.csproj|c:\\users\\diego\\documents\\api\\proyecto2api\\firestoreconnector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EEA317D-922F-4321-8488-E132C98252AB}|Proyecto2Api.csproj|solutionrelative:firestoreconnector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5EEA317D-922F-4321-8488-E132C98252AB}|Proyecto2Api.csproj|c:\\users\\diego\\documents\\api\\proyecto2api\\dto\\emaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EEA317D-922F-4321-8488-E132C98252AB}|Proyecto2Api.csproj|solutionrelative:dto\\emaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EEA317D-922F-4321-8488-E132C98252AB}|Proyecto2Api.csproj|c:\\users\\diego\\documents\\api\\proyecto2api\\estudianteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EEA317D-922F-4321-8488-E132C98252AB}|Proyecto2Api.csproj|solutionrelative:estudianteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,41 +34,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FirestoreConnector.cs",
-              "DocumentMoniker": "C:\\Users\\diego\\Documents\\api\\Proyecto2Api\\FirestoreConnector.cs",
-              "RelativeDocumentMoniker": "FirestoreConnector.cs",
-              "ToolTip": "C:\\Users\\diego\\Documents\\api\\Proyecto2Api\\FirestoreConnector.cs",
-              "RelativeToolTip": "FirestoreConnector.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "EmailDTO.cs",
+              "DocumentMoniker": "C:\\Users\\diego\\Documents\\api\\Proyecto2Api\\DTO\\EmailDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\EmailDTO.cs",
+              "ToolTip": "C:\\Users\\diego\\Documents\\api\\Proyecto2Api\\DTO\\EmailDTO.cs",
+              "RelativeToolTip": "DTO\\EmailDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-25T17:01:09.402Z",
+              "WhenOpened": "2024-06-27T09:17:19.886Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FirestoreController.cs",
-              "DocumentMoniker": "C:\\Users\\diego\\Documents\\api\\Proyecto2Api\\Controllers\\FirestoreController.cs",
-              "RelativeDocumentMoniker": "Controllers\\FirestoreController.cs",
-              "ToolTip": "C:\\Users\\diego\\Documents\\api\\Proyecto2Api\\Controllers\\FirestoreController.cs",
-              "RelativeToolTip": "Controllers\\FirestoreController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAApAAAA",
+              "DocumentIndex": 2,
+              "Title": "EstudianteService.cs",
+              "DocumentMoniker": "C:\\Users\\diego\\Documents\\api\\Proyecto2Api\\EstudianteService.cs",
+              "RelativeDocumentMoniker": "EstudianteService.cs",
+              "ToolTip": "C:\\Users\\diego\\Documents\\api\\Proyecto2Api\\EstudianteService.cs",
+              "RelativeToolTip": "EstudianteService.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAK0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-25T12:17:29.26Z",
+              "WhenOpened": "2024-06-26T02:36:56.424Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\diego\\Documents\\api\\Proyecto2Api\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\diego\\Documents\\api\\Proyecto2Api\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Title": "FirestoreController.cs",
+              "DocumentMoniker": "C:\\Users\\diego\\Documents\\api\\Proyecto2Api\\Controllers\\FirestoreController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FirestoreController.cs",
+              "ToolTip": "C:\\Users\\diego\\Documents\\api\\Proyecto2Api\\Controllers\\FirestoreController.cs",
+              "RelativeToolTip": "Controllers\\FirestoreController.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAYwEMAAABLAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-25T12:08:57.93Z",
+              "WhenOpened": "2024-06-25T12:17:29.26Z",
               "EditorCaption": ""
             }
           ]
